@@ -1,2 +1,8 @@
 server:
-  port: 9001
+  port: 9002
+
+jwt:
+  secret: mySecretKey
+
+domain:
+  user: http://localhost:9001/user/
