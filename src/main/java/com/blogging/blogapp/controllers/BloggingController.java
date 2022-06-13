@@ -17,11 +17,10 @@ public class BloggingController {
         return "";
     }
     @PostMapping("/save")
-    public String save(@RequestBody Blogging blogging) {
+    public String save(@RequestBody  Blogging blogging) {
         bloggingService.save(blogging);
         return "Saved Successfully";
     }
-    //@PreAuthorize("hasPermission({'ADMIN','NORMAL'}, 'saveAdmin')")
     @GetMapping("/get/{id}")
     public Blogging getById(Long id) {
         return bloggingService.getById(id);
