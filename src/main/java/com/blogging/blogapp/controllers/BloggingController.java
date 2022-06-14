@@ -30,8 +30,8 @@ public class BloggingController {
         bloggingService.save(blogging);
         return "Saved Successfully";
     }
-    @GetMapping("/get/{id}")
-    public Blogging getById(Long id) {
+    @GetMapping("/getById/{id}")
+    public Blogging getById(@PathVariable Long id) {
         return bloggingService.getById(id);
     }
 
