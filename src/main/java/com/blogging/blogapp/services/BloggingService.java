@@ -25,6 +25,11 @@ public class BloggingService {
         bloggingRepo.save(blogging);
     }
 
+    public void edit(Blogging blogging) {
+        bloggingRepo.save(blogging);
+    }
+
+
     public Blogging getById(Long id) {
         var blog = bloggingRepo.findById(id);
         if (blog == null)

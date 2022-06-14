@@ -6,6 +6,8 @@ import com.blogging.blogapp.services.BloggingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @RestController
 @RequestMapping("/blogging")
 public class BloggingController {
@@ -18,6 +20,13 @@ public class BloggingController {
     }
     @PostMapping("/save")
     public String save(@RequestBody  Blogging blogging) {
+        blogging.setPostedOn(new Date());
+        bloggingService.save(blogging);
+        return "Saved Successfully";
+    }
+
+    @PutMapping("/edit")
+    public String edit(@RequestBody  Blogging blogging) {
         bloggingService.save(blogging);
         return "Saved Successfully";
     }
