@@ -40,4 +40,9 @@ public class BloggingController {
     {
         return  bloggingService.getUserDetails();
     }
+    @DeleteMapping("/delete/{id}")
+    public String deleteById(@PathVariable Long id) {
+        bloggingService.deleteById(id);
+        return "Deleted Successfully";
+    }
 }

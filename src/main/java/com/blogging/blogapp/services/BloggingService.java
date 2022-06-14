@@ -29,6 +29,10 @@ public class BloggingService {
         bloggingRepo.save(blogging);
     }
 
+    public void deleteById(Long id) {
+        bloggingRepo.deleteById(id);
+    }
+
 
     public Blogging getById(Long id) {
         var blog = bloggingRepo.findById(id);
